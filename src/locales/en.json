@@ -1,0 +1,16 @@
+{
+  "nav": {
+    "dashboard": "Dashboard",
+    "cases": "Trade Cases",
+    "documents": "Documents",
+    "activity": "Activity",
+    "queue": "Queue",
+    "trash": "Trash",
+    "settings": "Settings",
+    "sign_out": "Sign Out"
+  },
+  "dashboard": {
+    "title": "Welcome back",
+    "description": "Here is an overview of your trade cases and recent activity."
+  }
+}

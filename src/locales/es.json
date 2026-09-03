@@ -1,0 +1,16 @@
+{
+  "nav": {
+    "dashboard": "Panel",
+    "cases": "Casos Comerciales",
+    "documents": "Documentos",
+    "activity": "Actividad",
+    "queue": "Cola",
+    "trash": "Papelera",
+    "settings": "Ajustes",
+    "sign_out": "Cerrar sesión"
+  },
+  "dashboard": {
+    "title": "Bienvenido de nuevo",
+    "description": "Aquí hay una descripción general de sus casos comerciales y la actividad reciente."
+  }
+}
