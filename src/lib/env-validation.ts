@@ -37,16 +37,27 @@ const OPTIONAL_ENV_VARS = [
 ] as const;
 
 export function validateEnv(): void {
+  // During `next build`, pages are statically evaluated without access to
+  // runtime secrets (they're injected by the hosting platform at request
+  // time). Failing fast is still valuable, but it must happen when the
+  // server actually starts handling requests, not while Next.js is
+  // collecting page data for prerendering.
+  const isBuildPhase = process.env.NEXT_PHASE === "phase-production-build";
+
   const missing: string[] = [];
-  
+
   for (const key of REQUIRED_ENV_VARS) {
     if (!process.env[key]) {
       missing.push(key);
     }
   }
-  
+
   if (missing.length > 0) {
     const message = `Missing required environment variables: ${missing.join(", ")}`;
+    if (isBuildPhase) {
+      console.warn(`[ENV VALIDATION] ${message} (skipping hard failure during build; these must be set in the runtime environment)`);
+      return;
+    }
     console.error(`[ENV VALIDATION FAILED] ${message}`);
     throw new Error(message);
   }
