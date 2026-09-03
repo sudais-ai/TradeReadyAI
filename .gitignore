@@ -69,3 +69,10 @@ next-env.d.ts
 
 # Local/test invoice data
 /scripts/test-invoice.txt
+
+# Internal development reports - keep local, do not publish
+/ABSOLUTE-CLOSURE-REPORT.md
+/FINAL-PRODUCTION-READINESS-REPORT.md
+/AGENTS.md
+/CLAUDE.md
+/PHASE*.md
